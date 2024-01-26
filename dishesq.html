@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>Carbon Footprint Calculator</title>
+        <link rel="stylesheet" href="questionStyle.css">
+        <meta name="viewport" content="width =device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+
+        <style>
+            *{
+             padding: 0;
+             margin: 0;
+             box-sizing: border-box;  
+            }
+            #banner{
+                width: 100%;
+                height: 100vh;
+                background-image: linear-gradient(rgba(0,0,0,0.5), #000000),url("images/dishes.jpg");
+                background-size: cover;
+                background-position: center; 
+            }   
+            #dishes{
+                margin-top: -400px;
+                margin-left: 550px;
+                align-items: center;
+                color: white;
+                font-size: 30;
+            }
+            .radio_container{
+                padding: 8px 50px;
+                position: center;
+            }
+            .radio_container input{
+                display:none;
+            }
+            .radio_container label{
+                margin-right: 30px;
+                position: relative;
+                cursor: pointer;
+            }
+            .btn{
+                margin-top: 20px;
+                border: none;
+                box-shadow: none;
+                padding: 10px 25px;
+                background: #333;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            .btn:hover{
+               background: #0b9234
+            }
+            ul{
+                list-style: none;
+            }
+              
+        </style>
+    </head>
+    <body>
+       <section id = "banner">
+            <img src = "images/logo.png" class = "logo">
+            <div class="banner-text">
+                <h1 id="question">How do you wash your dishes?</h1>
+                <div class="banner-btn">
+                    <a href="question3.html"><span></span><</a>
+                    <a href="electricity.html"><span></span>></a>
+                </div>
+            </div>
+        </section>
+
+        
+            <section id="dishes">
+                <div id="radio_container">
+                    <ul>
+                    <li><input type="radio" value="hand" class="dishes"/>
+                    <label for="hot">Hand Wash</label></li>
+
+                    <li><input type="radio" value="washer" class="dishes"/>
+                    <label for="cold">Dish Washer</label></li>
+                    </ul>
+                </div>
+                <div class="div">
+                    <button type="submit" class="btn" onclick="question4()">Enter</button>
+                </div>
+                
+            </section>
+
+        <div id="sideNav">
+            <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>  
+            </nav>
+        </div>
+        <div id="menuBtn">
+            <img src="images/menu.png" id="menu">
+        </div>
+
+        <script>
+        var menuBtn = document.getElementById("menuBtn")
+        var sideNav = document.getElementById("sideNav")
+        var menu = document.getElementById("menu")
+
+        sideNav.style.right = "-250px";
+
+        menuBtn.onclick = function(){
+            if(sideNav.style.right == "-250px"){
+                sideNav.style.right = "0";
+                menu.src = "images/close.png";
+            }
+            else{
+                sideNav.style.right = "-250px";
+                menu.src = "images/menu.png";
+            }
+        }
+
+        
+       
+    
+        </script>
+
+        <script src="/calc.js">
+            
+        </script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <title>Carbon Footprint Calculator</title>
+        <link rel="stylesheet" href="questionStyle.css">
+        <meta name="viewport" content="width =device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tangerine&display=swap" rel="stylesheet">
+
+        <style>
+            *{
+             padding: 0;
+             margin: 0;
+             outline: none;
+             box-sizing: border-box;  
+            }
+            #banner{
+                width: 100%;
+                height: 100vh;
+                background-image: linear-gradient(rgba(0,0,0,0.5), #000000),url("images/insta.jpg");
+                background-size: cover;
+                background-position: center; 
+            }
+            #insta{
+                margin-top: -400px;
+                margin-left: 300px;
+            }
+            .container{
+                position:relative;
+                width: 600px;
+                padding: 40px;
+            }
+            .input-field{
+                position:relative;
+                height: 40px;
+                width: 100%;
+            }
+            .input-field input[type="text"]{
+                position: absolute;
+                background:transparent;
+                border: none;
+                box-shadow: none;
+                font-size: 16px;
+                color: #fff;
+                width: 100%;
+            }
+            .input-field label{
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: rgba(255, 255, 255, 0.575);
+                pointer-events: none;
+                display: block;
+                transition: 0.5s;
+            }
+            .input-field input[type="text"]:focus + label,
+            .input-field input[type="text"]:valid + label{
+                transform: translateY(-35px);
+                font-size: 14px;
+                color: white;
+                background: #049210;
+                padding: 2px 6px;
+            }
+            .input-field span{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                display: block;
+                background: #555;
+                width: 100%;
+                height: 2px;
+            }
+            .input-field span:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #00b0ff;
+                transform: scaleX(0);
+                transform-origin: right;
+                transition: transform 0.5s ease-in-out;
+            }
+            .input-field input[type="text"]:focus ~ span:before,
+            .input-field input[type="text"]:valid ~ span:before{
+                transform: scaleX(1);
+                transform-origin: left;
+                transition: transform 0.5s ease-in-out;
+            }
+            .btn{
+                margin-top: 20px;
+                border: none;
+                box-shadow: none;
+                padding: 10px 25px;
+                background: #333;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            .btn:hover{
+               background: #0b9234
+            }
+              
+        </style>
+    </head>
+    <body>
+       <section id = "banner">
+            <img src = "images/logo.png" class = "logo">
+            <div class="banner-text">
+                <h1>How long do you scroll on instagram?</h1>
+                <div class="banner-btn">
+                    <a href="hairq.html"><span></span><</a>
+                    <a href="tiktok.html"><span></span>></a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="insta">
+        <div class="container">
+            <form id="instaq">
+                <div class="input-field">
+                    <input type="text" name="" id="instaques" required="">
+                    <label for = "instaques">Please enter your response in minutes</label>
+                    <span></span>
+                </div>
+                <button type="submit" class="btn" onclick="instaQ()">Submit</button>
+            </form>
+        </div>
+        </section>
+
+
+        <div id="sideNav">
+            <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>  
+            </nav>
+        </div>
+        <div id="menuBtn">
+            <img src="images/menu.png" id="menu">
+        </div>
+
+        <script>
+        var menuBtn = document.getElementById("menuBtn")
+        var sideNav = document.getElementById("sideNav")
+        var menu = document.getElementById("menu")
+
+        sideNav.style.right = "-250px";
+
+        menuBtn.onclick = function(){
+            if(sideNav.style.right == "-250px"){
+                sideNav.style.right = "0";
+                menu.src = "images/close.png";
+            }
+            else{
+                sideNav.style.right = "-250px";
+                menu.src = "images/menu.png";
+            }
+        }
+
+        
+        </script>
+
+        <script src="calc.js"></script>
+        <script>
+        
+        </script>
+    </body>
+</html>
