@@ -633,6 +633,18 @@ function trackTotal() {
       console.error(`Invalid value for element ${i}: ${elements[i]}`);
     }
   }
+  fetch("", {
+    method: "POST",
+    body: JSON.stringify({
+      total: total,
+      element: elements,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
   console.log("Total:", total);
   return total;
