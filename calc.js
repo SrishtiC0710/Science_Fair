@@ -263,6 +263,14 @@ function washerQ() {
   }
 }
 
+function calcDish() {
+  if (checkDish) {
+    washerQ();
+  } else if (!checkDish) {
+    handQ();
+  }
+}
+
 //electricity
 function electricityQ() {
   let electricityQ = document.getElementById("electricityq");
@@ -633,7 +641,7 @@ function trackTotal() {
       console.error(`Invalid value for element ${i}: ${elements[i]}`);
     }
   }
-  fetch("", {
+  fetch("https://formspree.io/f/mayrqayk", {
     method: "POST",
     body: JSON.stringify({
       total: total,
