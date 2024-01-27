@@ -628,6 +628,8 @@ function trackTotal() {
     result.innerHTML = finalTotal.toFixed(2) + " lbs of CO2 Annually!"; 
     var treeTotal = finalTotal/48;
     treeR.innerHTML = "If everyone lived like you, we would need to plant <br>" + treeTotal.toFixed(2) + " <br> Trees to absorb how much Carbon you emit in a year.";
+
+    
   }
   
 
