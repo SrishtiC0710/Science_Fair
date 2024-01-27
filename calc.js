@@ -589,7 +589,7 @@ function trackTotal() {
   } else if (!checkDish) {
     washerNum = sessionStorage.getItem("washerNum");
   }
-  //changed
+  //changes
   var elements = [
     eggNum,
     beefNum,
