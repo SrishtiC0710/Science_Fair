@@ -1,12 +1,17 @@
-var household;
 var meat;
-var beef;
 var egg;
-var pork;
+var beef;
 var poultry;
+var pork;
+var cheese;
+var milk;
+var rice;
+var legume;
+var carrot;
+var potato;
 var dishes;
 var hand;
-var wahser;
+var washer;
 var electricity;
 var water;
 var insta;
@@ -17,6 +22,8 @@ var work;
 var transport;
 var car;
 var elecCar;
+var checkCar;
+var checkDish;
 var bike;
 var bus;
 var walk;
@@ -24,22 +31,13 @@ var plane;
 var gym;
 var trash;
 var total = 0;
+sessionStorage.clear();
 
 
 const result = document.getElementById("result");
+// const treeR = document.getElementById("treeR");
 
 
-// question1
-let question1 = document.getElementById("question1");
-        question1.addEventListener("submit", function (e) {
-            e.preventDefault();
-            household = document.getElementById("houseq");
-            console.log(household.value);
-            // if (household = "4"){
-            //     htotal += 2;
-            //     console.log(htotal); 
-            // }
-      });
 
 //question3
 function question3() {
@@ -63,6 +61,11 @@ function question3() {
             }
         }
     }
+    var selectedMeat;
+    if (selectedMeat == null) {
+        // If no transport is selected, display an error message
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //egg
@@ -72,9 +75,12 @@ function eggQ(){
         event.preventDefault();
         egg = document.getElementById("eggques").value;
         var eggInt = parseInt(egg) * 0.89;
-        console.log(eggInt);
-        total += eggInt;
+        sessionStorage.setItem("eggNum", eggInt);
     });
+    var eggInput = document.getElementById("eggques").value;
+    if (eggInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //beef
@@ -84,9 +90,12 @@ function beefQ(){
         event.preventDefault();
         beef = document.getElementById("beefques").value;
         var beefInt = parseInt(beef) * 6.61;
-        console.log(beefInt);
-        total += eggInt;
+        sessionStorage.setItem("beefNum", beefInt);
     });
+    var beefInput = document.getElementById("beefques").value;
+    if (beefInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //poultry
@@ -96,9 +105,12 @@ function poultryQ(){
         event.preventDefault();
         poultry = document.getElementById("poultryques").value;
         var poultryInt = parseInt(poultry) * 1.26;
-        console.log(poultryInt);
-        total += poultryInt;
+        sessionStorage.setItem("poultryNum", poultryInt);
     });
+    var poultryInput = document.getElementById("poultryques").value;
+    if (poultryInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //pork
@@ -108,11 +120,103 @@ function porkQ(){
         event.preventDefault();
         pork = document.getElementById("porkques").value;
         var porkInt = parseInt(pork) * 1.72;
-        console.log(porkInt);
-        total += porkInt;
+        sessionStorage.setItem("porkNum", porkInt);
     });
+    var porkInput = document.getElementById("porkques").value;
+    if (porkInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
+//cheese
+function cheeseQ(){
+    let cheeseQ = document.getElementById("cheeseq");
+    cheeseQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        cheese = document.getElementById("cheeseques").value;
+        var cheeseInt = parseInt(cheese) * 2.45;
+        sessionStorage.setItem("cheeseNum", cheeseInt);
+    });
+    var cheeseInput = document.getElementById("cheeseques").value;
+    if (cheeseInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+//milk
+function milkQ(){
+    let milkQ = document.getElementById("milkq");
+    milkQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        milk = document.getElementById("milkques").value;
+        var milkInt = parseInt(milk) * 0.72;
+        sessionStorage.setItem("milkNum", milkInt);
+    });
+    var milkInput = document.getElementById("milkques").value;
+    if (milkInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+//Rice
+function riceQ(){
+    let riceQ = document.getElementById("riceq");
+    riceQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        rice = document.getElementById("riceques").value;
+        var riceInt = parseInt(rice) * 0.16;
+        sessionStorage.setItem("riceNum", riceInt);
+    });
+    var riceInput = document.getElementById("riceques").value;
+    if (riceInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+//Legume
+function legumeQ(){
+    let legumeQ = document.getElementById("legumeq");
+    legumeQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        legume = document.getElementById("legumeques").value;
+        var legumeInt = parseInt(legume) * 0.11;
+        sessionStorage.setItem("legumeNum", legumeInt);
+    });
+    var legumeInput = document.getElementById("legumeques").value;
+    if (legumeInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+//Carrot
+function carrotQ(){
+    let carrotQ = document.getElementById("carrotq");
+    carrotQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        carrot = document.getElementById("carrotques").value;
+        var carrotInt = parseInt(carrot) * 0.07;
+        sessionStorage.setItem("carrotNum", carrotInt);
+    });
+    var carrotInput = document.getElementById("carrotques").value;
+    if (carrotInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+//Potato
+function potatoQ(){
+    let potatoQ = document.getElementById("potatoq");
+    potatoQ.addEventListener("submit", function (event) {
+        event.preventDefault();
+        potato = document.getElementById("potatoques").value;
+        var potatoInt = parseInt(potato) * 0.03;
+        sessionStorage.setItem("potatoNum", potatoInt);
+    });
+    var potatoInput = document.getElementById("potatoques").value;
+    if (potatoInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
 
 //question4
 function question4() {
@@ -122,14 +226,20 @@ function question4() {
             dishes = select[i].value;
 
             if (dishes == "washer") {
+                checkDish = true;
                 window.location.href = "washerq.html";
-                // document.getElementById("question").innerHTML = htotal;
             }
             else if(dishes == "hand"){
+                checkDish = true;
                 window.location.href = "handq.html";
             }
         }
     }
+    // var select = document.getElementsByClassName("dishes");
+    // var selectedDishes;
+    // if (selectedDishes == null) {
+    //     alert("Please enter a response before submitting.");
+    // }
 }
 
 // hand wash
@@ -138,10 +248,13 @@ function handQ(){
     handQ.addEventListener("submit", function (event) {
         event.preventDefault();
         hand = document.getElementById("handques").value;
-        var handInt = parseInt(hand) * 8;
-        console.log(handInt);
-        total += handInt;
+        var handInt = parseInt(hand) * 8.0;
+        sessionStorage.setItem("handNum", handInt);
     });
+    var handInput = document.getElementById("handques").value;
+    if (handInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 // dishwasher
@@ -151,9 +264,12 @@ function washerQ(){
         event.preventDefault();
         washer = document.getElementById("washerques").value;
         var washerInt = parseInt(washer) * 1.34;
-        console.log(washerInt);
-        total += washerInt;
+        sessionStorage.setItem("washerNum", washerInt);
     });
+    var washerInput = document.getElementById("washerques").value;
+    if (washerInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //electricity
@@ -163,9 +279,12 @@ function electricityQ(){
         event.preventDefault();
         electricity = document.getElementById("electricityques").value;
         var electricityInt = parseInt(electricity) * 0.86;
-        console.log(electricityInt);
-        total += electricityInt;
+        sessionStorage.setItem("electricityNum", electricityInt);
     });
+    var electricityInput = document.getElementById("electricityques").value;
+    if (electricityInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //water
@@ -175,30 +294,32 @@ function waterQ(){
         event.preventDefault();
         water = document.getElementById("waterques").value;
         var waterInt = parseInt(water) * 0.18;
-        console.log(waterInt);
-        total += waterInt;
+        sessionStorage.setItem("waterNum", waterInt);
     });
+    var waterInput = document.getElementById("waterques").value;
+    if (waterInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //Hair question
 function question7(){
-        var htotal = 0;
+        var hairInt = 0;
       
         let dryer = document.getElementById("dryer");
         let straightner = document.getElementById("straightner");
         let curler = document.getElementById("curler");
       
         if (dryer.checked) {
-          htotal += 2.87    ;
+            hairInt += 2.87    ;
         }
         if (straightner.checked) {
-          htotal += 1.29;
+            hairInt += 1.29;
         }
         if (curler.checked) {
-          htotal += 0.1032;
+            hairInt += 0.1032;
         }
-        console.log("Your total is " + htotal + "pounds of CO2");
-        total += htotal;
+        sessionStorage.setItem("hairNum", hairInt);
 }
 
 //insta
@@ -208,9 +329,12 @@ function instaQ(){
         event.preventDefault();
         insta = document.getElementById("instaques").value;
         var instaInt = parseInt(insta) * 0.00683;
-        console.log(instaInt);
-        total += instaInt;
+        sessionStorage.setItem("instaNum", instaInt);
     });
+    var instaInput = document.getElementById("instaques").value;
+    if (instaInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //tiktok
@@ -220,9 +344,12 @@ function tiktokQ(){
         event.preventDefault();
         tiktok = document.getElementById("tiktokques").value;
         var tiktokInt = parseInt(tiktok) * 0.002833;
-        console.log(tiktokInt);
-        total += tiktokInt;
+        sessionStorage.setItem("tiktokNum", tiktokInt);
     });
+    var tiktokInput = document.getElementById("tiktokques").value;
+    if (tiktokInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //netflix
@@ -232,9 +359,12 @@ function netflixQ(){
         event.preventDefault();
         netflix = document.getElementById("netflixques").value;
         var netflixInt = parseInt(netflix) * 0.002;
-        console.log(netflixInt);
-        total += netflixInt;
+        sessionStorage.setItem("netflixNum", netflixInt);
     });
+    var netflixInput = document.getElementById("netflixques").value;
+    if (netflixInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //computer
@@ -244,28 +374,37 @@ function computerQ(){
         event.preventDefault();
         computer = document.getElementById("computerques").value;
         var computerInt = parseInt(computer) * 0.1934;
-        console.log(computerInt);
-        total += computerInt;
+        sessionStorage.setItem("computerNum", computerInt);
     });
+    var computerInput = document.getElementById("computerques").value;
+    if (computerInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //work
 function workQ() {
-    var wtotal = 0;
+    var workInt = 0;
     var select = document.getElementsByClassName("work");
     for (i = 0; i < select.length; i++) {
         if (select[i].checked) {
             work = select[i].value;
 
             if (work == "home") {
-                wtotal += 119.35;
+                workInt += 119.35;
             }
             else if(work == "office"){
-                wtotal += 23.87;
+                workInt += 23.87;
             }
         }
     }
-    console.log(wtotal);
+    sessionStorage.setItem("workNum", workInt);
+
+
+    // var selectedWork;
+    // if (selectedWork !== null) {
+    //     alert("Please enter a response before submitting.");
+    // }
 }
 
 //transport
@@ -276,13 +415,19 @@ function transportQ() {
             transport = select[i].value;
 
             if (transport == "car") {
-                window.location.href = "car.html"
+                checkCar = true;
+                window.location.href = "car.html";
             }
             else if(transport == "elecCar"){
-                window.location.href = "elecCar.html"
+                checkCar = false;
+                window.location.href = "elecCar.html";
             }
         }
     }
+    // var selectedTransport;
+    // if (selectedTransport == null) {
+    //     alert("Please enter a response before submitting.");
+    // }
 }
 
 //car
@@ -292,9 +437,12 @@ function carQ(){
         event.preventDefault();
         car = document.getElementById("carques").value;
         var carInt = parseInt(car) * 0.77;
-        console.log(carInt);
-        total += carInt;
+        sessionStorage.setItem("carNum", carInt);
     });
+    var carInput = document.getElementById("carques").value;
+    if (carInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }  
 }
 
 //elecCar
@@ -305,20 +453,32 @@ function elecCarQ(){
         elecCar = document.getElementById("elecCarques").value;
         var elecCarInt = parseInt(elecCar) * 0.440925;
         console.log(elecCarInt);
-        total += elecCarInt;
+        sessionStorage.setItem("elecCarNum", elecCarInt);
     });
+    var elecCarInput = document.getElementById("elecCarques").value;
+    if (elecCarInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
+}
+
+function calcCar(){
+
 }
 
 //bike
+
 function bikeQ(){
     let bikeQ = document.getElementById("bikeq");
     bikeQ.addEventListener("submit", function (event) {
         event.preventDefault();
         bike = document.getElementById("bikeques").value;
         var bikeInt = parseInt(bike) * 0.0727525;
-        console.log(bikeInt);
-        total += bikeInt;
+        sessionStorage.setItem("bikeNum", bikeInt);
     });
+    var bikeInput = document.getElementById("bikeques").value;
+    if (bikeInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //walk
@@ -328,9 +488,12 @@ function walkQ(){
         event.preventDefault();
         walk = document.getElementById("walkques").value;
         var walkInt = parseInt(walk) * 0.13;
-        console.log(walkInt);
-        total += walkInt;
+        sessionStorage.setItem("walkNum", walkInt);
     });
+    var walkInput = document.getElementById("walkques").value;
+    if (walkInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //bus
@@ -340,9 +503,12 @@ function busQ(){
         event.preventDefault();
         bus = document.getElementById("busques").value;
         var busInt = parseInt(bus) * 0.18;
-        console.log(busInt);
-        total += busInt;
+        sessionStorage.setItem("busNum", busInt);
     });
+    var busInput = document.getElementById("busques").value;
+    if (busInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //plane
@@ -352,9 +518,12 @@ function planeQ(){
         event.preventDefault();
         plane = document.getElementById("planeques").value;
         var planeInt = parseInt(plane) * 198.416;
-        console.log(planeInt);
-        trackTotal(planeInt);
+        sessionStorage.setItem("planeNum", planeInt);
     });
+    var planeInput = document.getElementById("planeques").value;
+    if (planeInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //gym
@@ -364,10 +533,12 @@ function gymQ(){
         event.preventDefault();
         gym = document.getElementById("gymques").value;
         var gymInt = parseInt(gym) * 0.99;
-        console.log(gymInt);
-        trackTotal(gymInt);
-
+        sessionStorage.setItem("gymNum", gymInt);
     });
+    var gymInput = document.getElementById("gymques").value;
+    if (gymInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
 //trash
@@ -377,17 +548,86 @@ function trashQ(){
         event.preventDefault();
         trash = document.getElementById("trashques").value;
         var trashInt = parseInt(trash) * 0.8;
-        console.log(trashInt);
-        trackTotal(trashInt);
+        sessionStorage.setItem("trashNum", trashInt);
     });
+    var trashInput = document.getElementById("trashques").value;
+    if (trashInput.trim() == "") {
+        alert("Please enter a response before submitting.");
+    }
 }
 
-function endPage(){
-    console.log(total);
-}
+function trackTotal() {
+    let eggNum = sessionStorage.getItem("eggNum");
+    let beefNum = sessionStorage.getItem("beefNum");
+    let poultryNum = sessionStorage.getItem("poultryNum");
+    let porkNum = sessionStorage.getItem("porkNum");
+    let cheeseNum = sessionStorage.getItem("cheeseNum");
+    let milkNum = sessionStorage.getItem("milkNum");
+    let riceNum = sessionStorage.getItem("riceNum");
+    let legumeNum = sessionStorage.getItem("legumeNum");
+    let carrotNum = sessionStorage.getItem("carrotNum");
+    let potatoNum = sessionStorage.getItem("potatoNum");
+    let handNum = 0;
+    let washerNum = 0;
+    let electricityNum = sessionStorage.getItem("electricityNum");
+    let waterNum = sessionStorage.getItem("waterNum");
+    let hairNum = sessionStorage.getItem("hairNum");
+    let instaNum = sessionStorage.getItem("instaNum");
+    let tiktokNum = sessionStorage.getItem("tiktokNum");
+    let netflixNum = sessionStorage.getItem("netflixNum");
+    let computerNum = sessionStorage.getItem("computerNum");
+    let workNum = sessionStorage.getItem("workNum");
+    let carNum = 0;
+    let elecCarNum = 0;
+    let bikeNum = sessionStorage.getItem("bikeNum");
+    let walkNum = sessionStorage.getItem("walkNum");
+    let busNum = sessionStorage.getItem("busNum");
+    let planeNum = sessionStorage.getItem("planeNum");
+    let gymNum = sessionStorage.getItem("gymNum");
+    let trashNum = sessionStorage.getItem("trashNum");
+  
+    if(checkCar){
+        carNum = sessionStorage.getItem("carNum");
+        console.log(carNum);
+    }else{
+        elecCarNum = sessionStorage.getItem("elecCarNum");
+        console.log(elecCarNum);
+    }
 
-function trackTotal(calc){
-    total += calc;
-    result.innerHTML = total + "pounds of CO2";
-}
+    if(checkDish){
+        handNum = sessionStorage.getItem("handNum");
+    }else{
+        washerNum = sessionStorage.getItem("washerNum");
+    }
+
+    var elements = [eggNum, beefNum, poultryNum, porkNum, cheeseNum, milkNum, riceNum, legumeNum, carrotNum, potatoNum, handNum, washerNum, electricityNum, waterNum, hairNum, instaNum, tiktokNum, netflixNum, computerNum, workNum, carNum, elecCarNum, bikeNum, walkNum, busNum, planeNum, gymNum, trashNum];
+    // var jsonString = JSON.stringify(elements);
+    // fs.writeFileSync('data.json', jsonString);
+
+    for (i = 0; i < elements.length; i++) {
+      total += parseFloat(elements[i]);
+    }
+
+    for (i = 0; i < elements.length; i++) {
+        var elementValue = parseFloat(elements[i]);
+        console.log(`Value for element ${i}: ${elementValue}`);
+
+        if (!isNaN(elementValue)) {
+            total += elementValue;
+        } else {
+            console.error(`Invalid value for element ${i}: ${elements[i]}`);
+        }
+    }
+
+    console.log("Total:", total);
+    return total;
+  }
+  
+  function endPage() {
+    var finalTotal = trackTotal();
+    result.innerHTML = finalTotal.toFixed(2) + " lbs of CO2 Annually!"; 
+    var treeTotal = finalTotal/48;
+    treeR.innerHTML = "If everyone lived like you, we would need to plant <br>" + treeTotal.toFixed(2) + " <br> Trees to absorb how much Carbon you emit in a year.";
+  }
+  
 

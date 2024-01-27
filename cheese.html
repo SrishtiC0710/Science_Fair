@@ -17,11 +17,11 @@
             #banner{
                 width: 100%;
                 height: 100vh;
-                background-image: linear-gradient(rgba(0,0,0,0.5), #000000),url("images/house.jpg");
+                background-image: linear-gradient(rgba(0,0,0,0.5), #000000),url("images/cheese.jpg");
                 background-size: cover;
                 background-position: center; 
             }
-            #house{
+            #cheese{
                 margin-top: -400px;
                 margin-left: 300px;
             }
@@ -109,23 +109,23 @@
        <section id = "banner">
             <img src = "images/logo.png" class = "logo">
             <div class="banner-text">
-                <h1>How many people live in your house?</h1>
+                <h1>How many servings of cheese do you eat per week?</h1>
                 <div class="banner-btn">
-                    <a href="index.html"><span></span><</a>
-                    <a href="question2.html"><span></span>></a>
+                    <a href="porkq.html"><span></span><</a>
+                    <a href="milk.html"><span></span>></a>
                 </div>
             </div>
         </section>
         
-        <section id="house">
+        <section id="cheese">
         <div class="container">
-            <form id="question1">
+            <form id="cheeseq">
                 <div class="input-field">
-                    <input type="text" name="" id="houseq" required="">
-                    <label>Please enter the number of family members</label>
+                    <input type="text" name="" id="cheeseques" required="">
+                    <label for = "cheeseques">Please enter your weekly cheese intake</label>
                     <span></span>
                 </div>
-                <input type="submit" value="Enter" name="" class="btn">
+                <button type="submit" class="btn" onclick="cheeseQ()">Enter</button>
             </form>
         </div>
         </section>

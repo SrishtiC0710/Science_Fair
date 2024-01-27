@@ -102,27 +102,55 @@
             .btn:hover{
                background: #0b9234
             }
-              
+            #total-container {
+                text-align: center;
+                margin-top: 5px;
+            }
+
+            #result {
+                font-size: 30px;
+                color: #dbe9dc; /* Change color as needed */
+                font-weight: bold;
+                /* Add more styles as needed */
+            }  
+            #tree-container{
+                text-align: center;
+                margin-top: 20px;
+            }
+            #treeR{
+                font-size: 24px;
+                color: white;
+                font-weight: bold;
+            }
         </style>
     </head>
-    <body onload="trackTotal()">
+    <body onload="endPage()">
        <section id = "banner">
             <img src = "images/logo.png" class = "logo">
             <div class="banner-text">
                 <h1>You emit approximately </h1>
-                <div class="banner-btn">
-                    <a href="trash.html"><span></span><</a>
+                <div class="banner-btn" style="padding-top: 5%;">
+                    <a href="index.html"><span></span>Back to Home</a>
                 </div>
             </div>
         </section>
         
+
         <section id="end">
-        <div class="container">
-                <div id = "result"></div>
-        </div>
+            <div class="container">
+                <div id="total-container">
+                    <div id="result"></div>
+                </div>
+            </div>
         </section>
 
-        
+        <section id="tree">
+            <div class="t-container">
+                <div id="tree-container">
+                    <div id="treeR"></div>
+                </div>
+            </div>
+        </section>
 
 
         <div id="sideNav">
